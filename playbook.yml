@@ -1,0 +1,16 @@
+- name: Configuraçao inicial
+  hosts: all
+  become: true
+  tasks:
+    - name: atualizar pacotes
+      apt:
+        update_cache: yes #sudo apt update
+        upgrade: dist    #sudo apt upgrade
+        
+    - name: instalar pacotes básicos
+      apt:
+        name: tree
+        state: present
+
+
+
